@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+</head>
+<body>
+        <h1 class="logo" >yzd111</h1>
+        <h1>yzd222</h1>
+        <h1>yzd333</h1>
+        <h2 id="myDiv">H2H2H2</h2>
+
+        <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+        </ul>
+
+        <li id="a"></li>
+        <li id="b"></li>
+        <li id="c"></li>
+
+
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="js/jquery.js"></script>
+    <script> 
+ 
+    // Your code goes here.
+
+        
+    window.onload = function() {
+ 
+        alert( "welcome" );
+
+    };
+
+
+      // $( "#myDiv" ).data( "keyName", { foo: "bar" } );
+    
+    // alert($( "#myDiv" ).data( "keyName" )); // Returns { foo: "bar" }
+
+
+//     $.each([ "foo", "bar", "baz" ], function( idx, val ) {
+//     alert( "element " + idx + " is " + val );
+// });
+ 
+// $.each({ foo: "bar", baz: "bim" }, function( k, v ) {
+//     alert( k + " : " + v );
+// });
+
+// var myArray = [ 1, 2, 3, 5 ];
+ 
+// if ( $.inArray( 3, myArray ) !== -1 ) {
+//     alert( "found it!" );
+// }
+
+var firstObject = { foo: "bar", a: "b" };
+var secondObject = { foo: "baz" };
+ 
+var newObject = $.extend( {}, firstObject, secondObject );
+ 
+alert( firstObject.foo ); // "bar"
+alert( newObject.foo ); // "baz"
+
+
+var sum = 0;
+var arr = [ 1, 2, 3, 4, 5 ];
+$.each( arr, function( index, value ){
+    sum += value;
+});
+ 
+alert( sum ); // 15
+
+
+var sum = 0;
+var obj = {
+    foo: 1,
+    bar: 2
+}
+for (var item in obj) {
+    sum += obj[ item ];
+}
+ 
+alert( sum ); // 3
+
+
+$( "li" ).each( function( index, element ){
+    alert( $( this ).text() );
+});
+ 
+// Logs the following:
+// Link 1
+// Link 2
+// Link 3
+
+
+var arr = [{
+    id: "a",
+    tagName: "li"
+}, {
+    id: "b",
+    tagName: "li"
+}, {
+    id: "c",
+    tagName: "li"
+}];
+ 
+// Returns [ "a", "b", "c" ]
+alert($( "li" ).map( function( index, element ) {
+    return element.id;
+}).get());
+ 
+// Also returns [ "a", "b", "c" ]
+// Note that the value comes first with $.map
+$.map( arr, function( value, index ) {
+    return value.id;
+});
+</script>
+</body>
+</html>

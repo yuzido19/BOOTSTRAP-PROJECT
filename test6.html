@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+</head>
+<body>
+      
+    <ul>
+        <div class="test"></div>
+        <li id="foo1">foo</li>
+        <li id="bar1" class="test">bar</li>
+        <li id="baz1">baz</li>
+        <div class="test"></div>
+    </ul>
+    <div id="last"></div>
+
+    <ul id="menu">
+        <li>x</li>
+        <li>y</li>
+        <li>z</li>
+    </ul>
+
+    <div>YZD DIV SAMPLE</div>
+
+    <p>YUSUF ZİYA DOĞRUOĞLU</p>
+
+    <a id="anchor" href="http://jquery.com/">jQuery</a>
+    
+    <button class="alert">YZD</button>
+
+    <button id="helloBtn">Say hello</button>
+
+    <form>
+        Ad : <input type="text" id="ad"/> <br />
+        <span id="sonuc"> </span>
+        <input type="submit" value="OK"/>
+        <input type="reset"/>
+        </form>
+<br>
+    
+        <div id="container">
+            <ul id="list">
+                <li><a href="http://google.com">Item #1</a></li>
+                <li><a href="/image/img_lights.jpg">Item #2</a></li>
+                <li><a href="/local/path/2">Item #3</a></li>
+                <li><a href="http://domain4.com">Item #4</a></li>
+            </ul>
+        </div>
+
+        <br>
+        <div class="room" id="kitchen">
+            <div class="lightbulb on">Kitchen light</div>
+            <div class="switch">Kitchen switch 1</div>
+            <div class="switch">Kitchen switch 2</div>
+            <div class="clapper">Kitchen clapper switch</div>
+        </div>
+        <br>
+        <div class="room" id="bedroom">
+            <div class="lightbulb on">Bedroom light</div>
+            <div class="switch">Bedroom switch 1</div>
+            <div class="switch">Bedroom switch 2</div>
+            <div class="clapper">Bedroom clapper switch</div>
+        </div>
+        <br>
+        <div id="master_switch">Master switch</div>
+        
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.simulate.js"></script>
+    
+    <script> 
+ 
+    // Your code goes here.
+
+        
+    window.onload = function() {
+ 
+        
+
+    };
+
+    
+   
+    $( document ).ready(function(event) {
+        
+        
+              
+
+    });
+
+    $( document ).on( "myCustomEvent", {
+        foo: "bar"
+    }, function( event, arg1, arg2 ) {
+        console.log( event.data.foo ); // "bar"
+        console.log( arg1 );           // "bim"
+        console.log( arg2 );           // "baz"
+    });
+ 
+$( document ).trigger( "myCustomEvent", [ "bim", "baz" ] );
+
+    //var foo = $( "li" );
+ 
+// This implicitly calls .first()
+// console.log( "Index: " + foo.index( "li" ) ); // 0
+// console.log( "Index: " + foo.first().index( "li" ) ); // 0
+ 
+// var baz = $( "#baz1" );
+// console.log( "Index: " + baz.index( "li" )); // 2
+ 
+// var listItem = $( "#bar1" );
+// console.log( "Index: " + listItem.index( ".test" ) ); // 1
+ 
+// var div = $( "#last" );
+// console.log( "Index: " + div.index( "div" ) ); // 2
+       
+
+
+// Event setup using a convenience method
+// $( "button" ).click(function() {
+//     console.log( "You clicked a button!" );
+// });
+// // Equivalent event setup using the `.on()` method
+// $( "button" ).on( "click", function() {
+//     console.log( "click" );
+// });
+
+// $( document ).ready(function(){
+ 
+//  // Sets up click behavior on all button elements with the alert class
+//  // that exist in the DOM when the instruction was executed
+//  $( "button.alert" ).on( "click", function() {
+//      console.log( "A button with the alert class was clicked!" );
+//  });
+
+//  // Now create a new button element with the alert class. This button
+//  // was created after the click listeners were applied above, so it
+//  // will not have the same click behavior as its peers
+//  $( "<button class='alert'>Alert!</button>" ).appendTo( document.body );
+// });
+
+// Preventing a link from being followed
+// $( "a" ).click(function( eventObject ) {
+//     var elem = $( this );
+//     if ( elem.attr( "href" ).match( /evil/ ) ) {
+//         eventObject.preventDefault();
+//         elem.addClass( "evil" );
+//     }
+// });
+
+// Switching handlers using the `.one()` method
+
+// Switching handlers using the `.one()` method
+
+    // $( "p" ).one( "click", function () {
+    // console.log( "You just clicked this for the first time!" );
+ 
+    // $( this ).click( function() { console.log( "You have clicked this before!" ); } );
+    // } )
+    
+
+    // Using .one() to bind several events
+    // $( "p" ).one( "focus mouseover keydown", firstEvent);
+    
+    // function firstEvent( eventObject ) {
+    //     console.log( "A " + eventObject.type + " event occurred for the first time on the input with id " + this.id );
+    // }
+
+
+    // The hover helper function
+// $( "#menu li" ).hover(function() {
+//     $( this ).toggleClass( "hover" );
+//     console.log("merhaba");
+// });
+
+
+// Event binding using addEventListener
+// var helloBtn = document.getElementById( "helloBtn" );
+ 
+// helloBtn.addEventListener( "click", function( event ) {
+//     console.log(event);
+// }, false );
+
+// Preventing a default action from occurring and stopping the event bubbling
+// $( "form" ).on( "submit", function( event ) {
+ 
+//  // Prevent the form's default submission.
+//  event.preventDefault();
+
+//  // Prevent event from bubbling up DOM tree, prohibiting delegation
+//  event.stopPropagation();
+
+//  // Make an AJAX request to submit the form data
+// console.log(event);
+
+// });
+
+
+// When a user focuses on or changes any input element,
+// we expect a console message bind to multiple events
+
+// $( "div" ).on({
+//     mouseenter: function() {
+//         console.log( "hovered over a div" );
+//     },
+//     mouseleave: function() {
+//         console.log( "mouse left a div" );
+//     },
+//     click: function() {
+//         console.log( "clicked on a div" );
+//     }
+// });
+
+// When a user focuses on or changes any input element,
+// we expect a console message bind to multiple events
+// 
+
+// $( "div" ).on( "click", function( event ) {
+//     console.log( "event object:" );
+//     console.dir( event );
+//     console.dir( console );
+// });
+
+/* // $( "p" ).on( "click", {
+//     foo: "bar",
+//     yzd: "yzd"
+// }, function( event ) {
+//     console.log( "event data: " + event.data.foo + " " + event.data.yzd + " (should be 'bar')" );
+// }); */
+
+// $( "ul" ).on( "click", "li", function() {
+//     console.log( "Something in a <ul> was clicked, and we detected that it was an <li> element." );
+// });
+
+// Switching handlers using the `.one()` method
+
+// $( "p" ).one( "click", function() {
+//     console.log( "You just clicked this for the first time!" );
+//     $( this ).click(function() {
+//         console.log( "You have clicked this before!" );
+//     });
+//     $( this ).click(function() {
+//         console.log( "You have clicked this before! 222222" );
+//     });
+// });
+
+
+// Unbinding a particular click handler, using a reference to the function
+// var foo = function() {
+//     console.log( "foo" );
+// };
+ 
+// var bar = function() {
+//     console.log( "bar" );
+// };
+ 
+// $( "p" ).on( "click", foo ).on( "click", bar );
+ 
+// // foo will stay bound to the click event
+// $( "p" ).off( "click", bar );
+
+
+// Preventing a link from being followed
+// $( "#anchor" ).click(function( event ) {
+//     var elem = $( this );
+//     if ( elem.attr( "href" ).match("http://jquery.com/") ) {
+//         event.preventDefault();
+//         elem.addClass( "jquery" );
+//         alert(elem.attr( "href" ));
+//     }
+//     else console.log("false");
+// });
+
+
+//     // Attach a directly bound event handler
+// $( "#list a" ).on( "click", function( event ) {
+//     event.preventDefault();
+//     console.log( $( this ).text );
+// });
+
+
+    // Attach a delegated event handler
+// $( "#list" ).on( "click", "a", function( event ) {
+//     event.preventDefault();
+//     console.log( $( this ).text() );
+// });
+
+// Attach a delegated event handler
+// $( "#list" ).on( "click", "a", function( event ) {
+//     var elem = $( this );
+//     if ( elem.is( "[href^='http" ) ) {
+//         elem.attr( "target", "_blank" );
+//         console.log(true);
+//     }
+// });
+
+
+//$( "a" ).trigger( "click" );
+
+
+//  $( "#anchor" ).simulate("click");
+
+
+
+
+ 
+// Triggering an event handler the right way
+// var foo = function( event ) {
+//     if ( event ) {
+//         console.log( event );
+//     } else {
+//         console.log( "this didn't come from an event!" );
+//     }
+// };
+ 
+// foo(); // instead of $( "p" ).trigger( "click" )
+
+
+// $( "p" ).on( "click", foo );
+// $( "p" ).simulate("click"); 
+
+
+/*$( ".switch, .clapper" ).click(function() {
+    
+    console.log($( this ).text());
+    var light = $( this ).closest( ".room" );
+    console.log(light.text());
+    
+    if ( light.is( ".on" ) ) {
+        light.removeClass( "on" ).addClass( "off" ); 
+        
+    } else {
+        light.removeClass( "off" ).addClass( "on" );
+        
+    }
+    
+    
+});*/
+
+
+$( ".lightbulb" ).on( "light:toggle", function( event ) {
+    var light = $( this );
+    console.log(light.text());
+
+    
+    if ( light.is( ".on" ) ) {
+        light.removeClass( "on" ).addClass( "off" );
+        console.log("off oldu");
+    } else {
+        light.removeClass( "off" ).addClass( "on" );
+        console.log("on oldu");
+    }
+    
+}).on( "light:on", function( event ) {
+    $( this ).removeClass( "off" ).addClass( "on" );
+    console.log("on durumunda");
+}).on( "light:off", function( event ) {
+    $( this ).removeClass( "on" ).addClass( "off" );
+    console.log("off durumunda");
+});
+
+ 
+$( ".switch, .clapper" ).click(function() {
+    var room = $( this ).closest( ".room" );
+    room.find( ".lightbulb" ).trigger( "light:toggle" );
+});
+
+$( "#master_switch" ).click(function() {
+    var lightbulbs = $( ".lightbulb" );
+    
+    // Check if any lightbulbs are on
+    if ( lightbulbs.is( ".on" ) ) {
+        lightbulbs.trigger( "light:off" );
+    } else {
+        lightbulbs.trigger( "light:on" );
+    }
+});
+
+    </script>
+</body>
+</html>

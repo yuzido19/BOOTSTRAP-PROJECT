@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <style>
+
+      
+  </style>
+
+</head>
+<body>
+      
+  <p>YUSUF ZİYA</p>
+  <p>NURAY</p>
+  <p>GÜLAY</p>
+
+  <div class="box">YZD DIV SAMPLE</div>
+  <p id="title">yzd</p>
+
+  <!-- <p><button id="go">Run »</button></p>
+  <div class="block"></div>
+  <div class="block"></div>
+  <div class="block"></div>
+  <div class="block"></div>
+  <div class="block"></div>
+  <div class="block"></div> -->
+
+  
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.simulate.js"></script>
+    
+    <script> 
+ 
+    // Your code goes here.
+
+        
+    window.onload = function() {
+ 
+      
+
+    };
+
+    
+   
+    $( document ).ready(function(event) {
+        
+        
+              
+
+    });
+
+
+    // $( document ).on( "myCustomEvent", {
+    //     foo: "bar"
+    // }, function( event, arg1, arg2 ) {
+    //     console.log( event.data.foo ); // "bar"
+    //     console.log( arg1 );           // "bim"
+    //     console.log( arg2 );           // "baz"
+    // });
+ 
+    // $( document ).trigger( "myCustomEvent", [ "bim", "baz" ] );
+
+    
+    
+// Run a callback even if there were no elements to animate
+// var someElement = $( "#nonexistent" );
+ 
+// var cb = function() {
+//     console.log( "done!" );
+// };
+ 
+// if ( someElement.length ) {
+//     $( "p" ).fadeOut( 3000, cb );
+// } else {
+//     cb();
+// }
+
+
+// $( "p" ).fadeOut( 5000, function() {
+//     // this = DOM element which has just finished being animated
+//     // $( this ).addClass( "lookAtMe" );
+//     console.log($(this).text());
+// });
+
+// var p123 = $( "p" );
+// // Create a button to stop all animations on the page:
+// $( "<button type='button'></button>" )
+//     .text( "Stop All Animations" )
+//     .on( "click", function() {
+//         $( p123[0] ).stop();
+        
+//     })
+//     .appendTo( document.body );
+
+    // Per-property easing
+// $( "div.funtimes" ).animate({
+//     left: [ "+=150", "swing" ],
+//     opacity: [ 0.25, "linear" ]
+// }, 3000 );
+
+// $( "p" ).animate({
+//   height: 200,
+//   width: 400,
+//   opacity: 0.5
+// }, 3000, "linear", function() {
+//   alert( "all done" );
+// });
+
+
+// $( "#clickme" ).on( "click", function() {
+//   $( "#book" ).animate({
+//     opacity: 0.25,
+//     left: "+=50",
+//     height: "toggle"
+//   }, 5000, function() {
+//     // Animation complete.
+//   });
+// });
+
+// $( "li" ).animate({
+//   opacity: .5,
+//   height: "50%"
+// }, {
+//   step: function( now, fx ) {
+//     var data = fx.elem.id + " " + fx.prop + ": " + now;
+//     $( "body" ).append( "<div>" + data + "</div>" );
+//   }
+// });
+
+// $( "#clickme" ).on( "click", function() {
+//   $( "#book" ).animate({
+//     width: [ "toggle", "swing" ],
+//     height: [ "toggle", "swing" ],
+//     opacity: "toggle"
+//   }, 5000, "linear", function() {
+//     $( this ).after( "<div>Animation complete.</div>" );
+//   });
+// });
+
+
+// $( "#clickme" ).on( "click", function() {
+//   $( "#book" ).animate({
+//     width: "toggle",
+//     height: "toggle"
+//   }, {
+//     duration: 5000,
+//     specialEasing: {
+//       width: "linear",
+      
+//     },
+//     complete: function() {
+//       $( this ).after( "<div>Animation complete.</div>" );
+//     }
+//   });
+// });
+
+// $( "#right" ).on( "click", function() {
+//   $( ".block" ).animate({ "left": "+=50px" }, "slow" );
+// });
+ 
+// $( "#left" ).on( "click", function(){
+//   $( ".block" ).animate({ "left": "-=50px" }, "slow" );
+// });
+
+// $( "#down" ).on( "click", function() {
+//   $( ".block" ).animate({ "top": "+=50px" }, "slow" );
+// });
+ 
+// $( "#top" ).on( "click", function(){
+//   $( ".block" ).animate({ "top": "-=50px" }, "slow" );
+// });
+
+
+
+// $( "#go" ).on( "click", function() {
+//   $( ".block" ).first().animate({
+//     left: 100
+//   }, {
+//     duration: 1000,
+//     step: function( now, fx ){
+//       $( ".block" ).slice( 1 ).css( "left", now );
+//       console.log(now);
+//     }
+//   });
+// });
+
+
+$( ".box" )
+    .animate( {
+        height: 20
+    }, "slow")
+    .queue( function() {
+        $( "#title" ).html( "We're in the animation, baby!" );
+ 
+        // This tells jQuery to continue to the next item in the queue
+        //$( this ).dequeue();
+    } );
+
+</script>
+</body>
+</html>

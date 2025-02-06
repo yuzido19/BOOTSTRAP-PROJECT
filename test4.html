@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+</head>
+<body>
+        <h1 class="logo" >yzd111</h1>
+        <h1>yzd222</h1>
+        <h1 id="myDiv">yzd333</h1>
+
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="js/jquery.js"></script>
+    <script> 
+ 
+    // Your code goes here.
+
+        
+    window.onload = function() {
+ 
+        alert( "welcome" );
+
+    };
+
+
+
+    $( document ).ready(function() {
+ 
+        $( "a" ).click(function( event ) {
+
+        alert( "As you can see, the link no longer took you to jquery.com" );
+        
+        
+    });
+
+    
+        $( "a" ).click(function( event ) {
+ 
+        event.preventDefault();
+
+        $( this ).hide( "slow" );
+        $( this ).show( "slow" );
+        
+        var myItems = [];           
+        for ( var i = 0; i < 100; i++ ) {
+            myItems.push( "<li>item " + i + "</li>" );
+        }
+       myItems.join( "" );
+        
+
+        alert(myItems.length);
+
+        var headings = $( "h1" );
+        var firstHeading = headings.eq( 0 );
+        var firstHeadingElem = $( "h1" )[2];
+        alert(firstHeadingElem.innerHTML);
+
+        // Comparing DOM elements.
+ 
+        var logo1 = $( "#logo" );
+        var logo2 = $( "#logo" );
+        alert( $( "#logo" ) === $( "#logo" ) ); // alerts "false"
+
+        // Comparing DOM elements (with more readable variable names).
+ 
+        var $logo1 = $( "#logo" );
+        var logo1 = $logo1.get( 0 );
+        
+        var $logo2 = $( "#logo" );
+        var logo2 = $logo2.get( 0 );
+        
+        alert( logo1 === logo2 ); // alerts "true"
+
+
+
+        alert($( "h1.logo" ).css( "font-size" ));
+
+        
+                // Setting CSS properties.
+        
+        $( "h1" ).css( "fontSize", "100px" ); // Setting an individual property.
+        
+        // Setting multiple properties.
+        $( "h1" ).css({
+            fontSize: "100px",
+            color: "red"
+        });
+
+       alert($( "h1" ).css( "font-size" ));
+       alert($( "h1" ).css( "color" ));
+
+         });
+    });
+
+    // Working with classes.
+ 
+    var h1 = $( "h1" );
+    
+    h1.addClass( "big" );
+    h1.removeClass( "big" );
+    h1.toggleClass( "big" );
+    
+    if ( h1.hasClass( "big" ) ) {
+        alert(true);
+    }
+
+    // Basic dimensions methods.
+ 
+// Sets the width of all <h1> elements.
+$( "h1" ).width( "50px" );
+ 
+ // Gets the width of the first <h1> element.
+ alert($( "h1" ).width());
+  
+ // Sets the height of all <h1> elements.
+ $( "h1" ).height( "50px" );
+  
+ // Gets the height of the first <h1> element.
+alert( $( "h1" ).height() );
+  
+  
+ // Returns an object containing position information for
+ // the first <h1> relative to its "offset (positioned) parent".
+ 
+
+    $( "#myDiv" ).data( "keyName", { foo: "bar" } );
+ 
+    alert($( "#myDiv" ).data( "keyName" )); // Returns { foo: "bar" }
+
+
+ 
+    </script>
+</body>
+</html>

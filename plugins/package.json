@@ -1,0 +1,20 @@
+{
+    "name": "your-plugin-name",
+    "version": "1.0.0",
+    "description": "Description of your jQuery plugin",
+    "main": "path-to-main-file.js",
+    "keywords": ["jquery", "jquery-plugin", "ecosystem:jquery"],
+    "author": "Your Name",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/your-plugin-name.git"
+    },
+    "bugs": {
+        "url": "https://github.com/yourusername/your-plugin-name/issues"
+    },
+    "homepage": "https://github.com/yourusername/your-plugin-name#readme",
+    "peerDependencies": {
+        "jquery": ">=3.5"
+    }
+}

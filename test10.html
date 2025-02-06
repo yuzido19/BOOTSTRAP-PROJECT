@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <style>
+
+      
+  </style>
+
+</head>
+<body>
+      
+  <div style="color:red" class="myDiv">YZD DIV SAMPLE</div>
+  <div style="color:aqua" class="myDiv">NURAY DIV SAMPLE</div>
+  <div style="color:pink" class="myDiv">GÜLAY DIV SAMPLE</div>
+
+  <br>
+  
+  <p href="page.html">YUSUF ZİYA</p>
+  <p href="page.html">NURAY</p>
+  <p href="page.html">GÜLAY</p>
+
+   <!-- <a style="color:red">111</a> 
+   <br>
+   <a style="color:green">222</a>
+   <br>
+   <a style="color:blue">333</a>  -->
+
+   <a href="page.html">Foo111</a>
+   <br>
+   <a href="page.html">Foo222</a>
+   <br>
+   <a href="page.html">Foo333</a>
+
+
+    <h1 style="background-color:rgb(137, 84, 74);">Hello World</h1>
+    <h1 style="background-color:rgb(69, 196, 73);">Hello World</h1>
+    <h1 style="background-color:rgb(192, 68, 186);">Hello World</h1> 
+
+    <ul id="myFeature">
+        <li>x</li>
+        <li>y</li>
+        <li>z</li>
+    </ul>
+    <div class="box">YZD DIV SAMPLE</div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.simulate.js"></script>
+    
+    <script> 
+ 
+    // Your code goes here.
+
+        
+    window.onload = function() {
+ 
+      
+
+    };
+
+    $( document ).ready(function(event) {
+        
+        myFeature.init;
+              
+
+    }); 
+   
+   // Using an object literal for a jQuery feature
+var myFeature = {
+    init: function( settings ) {
+        myFeature.config = {
+            items: $( "#myFeature li" ),
+            container: $( "<div class='container'></div>" ),
+            urlBase: "/demo_test.txt?item="
+        };
+ 
+        // Allow overriding the default config
+        $.extend( myFeature.config, settings );
+ 
+        myFeature.setup();
+    },
+ 
+    setup: function() {
+        myFeature.config.items
+            .each( myFeature.createContainer )
+            .click( myFeature.showItem );
+    },
+ 
+    createContainer: function() {
+        var item = $( this );
+        var container = myFeature.config.container
+            .clone()
+            .appendTo( item );
+        item.data( "container", container );
+    },
+ 
+    buildUrl: function() {
+        return myFeature.config.urlBase + myFeature.currentItem.attr( "id" );
+    },
+ 
+    showItem: function() {
+        myFeature.currentItem = $( this );
+        myFeature.getContent( myFeature.showContent );
+    },
+ 
+    getContent: function( callback ) {
+        var url = myFeature.buildUrl();
+        myFeature.currentItem.data( "container" ).load( url, callback );
+    },
+ 
+    showContent: function() {
+        myFeature.currentItem.data( "container" ).show();
+        myFeature.hideContent();
+    },
+ 
+    hideContent: function() {
+        myFeature.currentItem.siblings().each(function() {
+            $( this ).data( "container" ).hide();
+        });
+    }
+};
+ 
+
+
+
+
+// An object literal
+// var myFeature = {
+//     myProperty: "hello",
+ 
+//     myMethod: function() {
+//         console.log( myFeature.myProperty );
+//     },
+ 
+//     init: function( init ) {
+//         myFeature.myProperty = init;
+//     },
+ 
+//     readSettings: function() {
+//         console.log( myFeature.myProperty );
+//     }
+// };
+ 
+// console.log(myFeature.myProperty === "hello"); // true
+ 
+// myFeature.myMethod(); // "hello"
+
+// myFeature.init("init");
+ 
+// myFeature.readSettings(); // { foo: "bar" }
+
+
+// An object literal
+// var myFeature = {
+//     myProperty: "hello", yzd: {
+    
+// },
+ 
+//     myMethod: function() {
+//         console.log( myFeature.myProperty );
+//     },
+ 
+//     init: function( settings ) {
+//         myFeature.yzd = settings;
+//     },
+ 
+//     readSettings: function() {
+//         console.log( myFeature.yzd.foo + "  " +myFeature.yzd.foo222 );
+//     }
+// };
+ 
+// console.log(myFeature.myProperty === "hello"); // true
+ 
+// myFeature.myMethod(); // "hello"
+ 
+// myFeature.init({
+//     foo: "bar", foo222: "yzd222"
+// });
+ 
+// myFeature.readSettings(); // { foo: "bar" }
+
+</script>
+</body>
+</html>
